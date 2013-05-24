@@ -1,0 +1,18 @@
+{
+   "livestream": false,
+   "schedual": {
+      "0": {
+         "title": "Novara on Resonance FM",
+         "media": "fm",
+         "day": 2,
+         "start": {
+            "hour": 13,
+            "min": 55
+         },
+         "end": {
+            "hour": 15,
+            "min": 5
+         }
+      }
+   }
+}
