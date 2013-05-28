@@ -35,7 +35,8 @@ function initFm() {
 
 		var stream = {
 			title: "Renosance FM",
-			mp3: "http://icecast.commedia.org.uk:8000/resonance_hi.mp3"
+/* 			mp3: "http://icecast.commedia.org.uk:8000/resonance_hi.mp3" */
+			mp3: "http://radio.canstream.co.uk:8004/live.mp3"
 		},
 			ready = false;
 		var my_jPlayer = $("#jplayer"),
