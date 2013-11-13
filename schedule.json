@@ -1,18 +1,23 @@
-{
-   "livestream": false,
-   "schedual": {
-      "0": {
-         "title": "Novara on Resonance FM",
-         "media": "fm",
-         "day": 2,
-         "start": {
-            "hour": 13,
-            "min": 55
-         },
-         "end": {
-            "hour": 15,
-            "min": 5
-         }
-      }
-   }
+{   "livestream": false,
+	   "schedual": {      "0": {         "title": "Novara on Resonance FM",
+			         "media": "fm",
+			         "day": 5,
+			         "start": {            "hour": 12,
+				            "min": 58         
+			},
+			         "end": {            "hour": 14,
+				            "min": 2         
+			}      
+		},
+		"1": {         "title": "Novara on Resonance FM",
+			         "media": "fm",
+			         "day": 1,
+			         "start": {            "hour": 6,
+				            "min": 58         
+			},
+			         "end": {            "hour": 8,
+				            "min": 2         
+			}      
+		}   
+	}
 }
