@@ -22,11 +22,11 @@ label, input[type=button], input[type=submit], button { cursor: pointer; }
 /* always force a scrollbar in non-IE */
 html { overflow-y: scroll; }
 
-/* make buttons play nice in IE:    
+/* make buttons play nice in IE:
    www.viget.com/inspire/styling-the-button-element-in-internet-explorer/ */
 button {  width: auto; overflow: visible; }
- 
-/* bicubic resizing for non-native sized IMG: 
+
+/* bicubic resizing for non-native sized IMG:
    code.flickr.com/blog/2008/11/12/on-ui-quality-the-little-things-client-side-image-resizing/ */
 .ie7 img { -ms-interpolation-mode: bicubic; }
 
@@ -172,6 +172,8 @@ header {
 #broadcast {
 	clear: both;
 	margin-bottom: 35px;
+	background-image: url('http://novaramedia.com/wp-content/themes/novara-0point9-4/img/marble/header-1.png');
+	background-size: cover;
 }
 
 #social-media, #broadcast-fm, #broadcast-tv, #broadcast-livestream {
@@ -239,11 +241,11 @@ header {
 /* SOCIAL MEDIA */
 
 #social-media {
-	
+
 }
 
 #social-media .tweets {
-	max-width: 550px;	
+	max-width: 550px;
 	margin-left: auto;
 	margin-right: auto;
 }
@@ -269,24 +271,24 @@ header {
 .float-half {
 	float: left;
 	width: 50%;
-	
+
 	-moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;
 	padding: 10px;
 }
 
 div.tweets ul.update-results:first-child {
 	background-color: yellow;
-} 
+}
 
 /* SITE POSTS INSERT */
 
 #site-posts {
 	display: none;
-	opacity: 0;	
+	opacity: 0;
 }
 
 #site-posts-posts {
-	margin-top: 50px;	
+	margin-top: 50px;
 }
 
 #site-posts-posts li {
