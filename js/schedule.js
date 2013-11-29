@@ -37,7 +37,7 @@ function isLive() {
 			now = new Date(utc.getUTCFullYear(), utc.getUTCMonth(), utc.getUTCDate(), utc.getUTCHours(), utc.getUTCMinutes(), utc.getUTCSeconds());
 
 		}
-		
+
 		var day = now.getDay();
 		var hours = now.getHours();
 		var minutes = now.getMinutes();
@@ -49,15 +49,29 @@ function isLive() {
 				live = true;
 
 		} else if (day === 5 && dayminutes > 778 && dayminutes < 842) {
-				
+
 				live = true;
-				
+
 		} else {
-		
+
 				live = false;
-		
+
 		}
-		
+
 		return live;
 
 }
+
+/*
+function getRandomInt (min, max) {
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
+function isLive() {
+	if (getRandomInt(0, 1) === 1) {
+		return true;
+	} else {
+		return false;
+	}
+}
+*/

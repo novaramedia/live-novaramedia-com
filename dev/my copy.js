@@ -109,15 +109,88 @@ OPTION_KEY:"The option requested in jPlayer('option') is undefined."};b.jPlayer.
 
 /* CACHE STUFF */
 var broadcastStatus = $('#broadcast-status');
+var broadcastLivestream = $('#broadcast-livestream');
+var broadcastTV = $('#broadcast-tv');
 var broadcastFm = $('#broadcast-fm');
 var socialMedia = $('section#social-media');
 var sitePostsSection = $('section#site-posts');
 var sitePosts = $('section#site-posts div.posts');
 var archive = $('#archive');
 
-var live;
-var isFM;
-var isPosts;
+/* FM PLAYER INIT FUNCTION */
+function initFm() {
+	if (!isFM) {
+		broadcastFm.show();
+		socialMedia.show();
+
+		stream = {
+			title: "Renosance FM",
+			/* mp3: "http://icecast.commedia.org.uk:8000/resonance_hi.mp3" */
+			mp3: "http://radio.canstream.co.uk:8004/live.mp3"
+		},
+		ready = false;
+		my_jPlayer = $("#jplayer"),
+		my_extraPlayInfo = $("#jp_container .extra-play-info");
+		opt_text_playing = "Now playing",
+		opt_text_selected = "Track selected";
+		$.jPlayer.timeFormat.padMin = false;
+		$.jPlayer.timeFormat.padSec = false;
+		$.jPlayer.timeFormat.sepMin = " min ";
+		$.jPlayer.timeFormat.sepSec = " sec";
+		my_jPlayer.jPlayer({
+			ready: function() {
+				ready = true;
+				$(this).jPlayer("setMedia", stream);
+			},
+			timeupdate: function(event) {
+				my_extraPlayInfo.text(parseInt(event.jPlayer.status.currentPercentAbsolute, 10) + "%");
+			},
+			play: function(event) {
+			},
+			pause: function(event) {
+				$(this).jPlayer("clearMedia");
+			},
+			ended: function(event) {
+			},
+			error: function(event) {
+				if (ready && event.jPlayer.error.type === $.jPlayer.error.URL_NOT_SET) {
+					$(this).jPlayer("setMedia", stream).jPlayer("play");
+				}
+			},
+			swfPath: "js",
+			cssSelectorAncestor: "#jp_container",
+			supplied: "mp3",
+			preload: "none",
+			wmode: "window"
+		});
+
+		broadcastFm.css('opacity', 1);
+		socialMedia.css('opacity', 1);
+
+		broadcastStatus.html('FM Live');
+
+		isFM = true;
+	}
+}
+
+/* THIS DISPLAYS LATEST POSTS FROM MAIN SITE IF PLAYER IS OFFLINE */
+function initPosts() {
+	if (!isPosts) {
+		archiveLink();
+		$.getJSON("http://novaramedia.com/api/all/?callback=?", null, function(data) {
+			var posts_insert = [];
+			$.each(data.posts, function(i, item) {
+				posts_insert.push('<a target="_blank" href="' + item.permalink + '"><li>' + item.title + '</li></a>');
+			});
+			$('<ul/>', {
+				'id': 'site-posts-posts',
+				html: posts_insert.join('')
+			}).prependTo(sitePosts);
+		});
+		sitePostsSection.show().css('opacity', 1);
+		isPosts = true;
+	}
+}
 
 // display currently playing on Archive FM
 function archiveLink() {
@@ -129,139 +202,47 @@ function archiveLink() {
 	});
 }
 
+/* CHECK IF LIVE */
+var live;
+var isFM;
+var isPosts;
+
+function liveLogic() {
+	var liveCheck = isLive();
+	if (live && liveCheck) {
+		initFm();
+		sitePostsSection.hide();
+		archive.hide();
+		isPosts = false;
+	} else if (live && !liveCheck) {
+		my_jPlayer.jPlayer("clearMedia");
+		broadcastFm.hide();
+		broadcastStatus.html('Offline');
+		initPosts();
+		live = false;
+		isFM = false;
+	} else if (!live && liveCheck) {
+		initFm();
+		sitePostsSection.hide();
+		archive.hide();
+		isPosts = false;
+		live = true;
+	} else if (!live && !liveCheck) {
+		broadcastFm.hide();
+		broadcastStatus.html('Offline');
+		initPosts();
+		isFM = false;
+	}
+}
+liveLogic();
+var timer;
+timer = setInterval(function() {
+	liveLogic();
+}, 1000);
+
 // replace svg with png for unsupported browsers
 if (!Modernizr.svg) {
 			$('img[src*="svg"]').attr('src', function() {
 				return $(this).attr('src').replace('.svg', '.png');
 			});
 }
-
-var my_jPlayer;
-
-// Player object
-var player = {
-	init : function() {
-		var stream = {
-			title: "Renosance FM",
-			/* mp3: "http://icecast.commedia.org.uk:8000/resonance_hi.mp3" */
-			mp3: "http://radio.canstream.co.uk:8004/live.mp3"
-		};
-		var ready = false;
-		my_jPlayer = $("#jplayer");
-
-		$.jPlayer.timeFormat.padMin = false;
-		$.jPlayer.timeFormat.padSec = false;
-		$.jPlayer.timeFormat.sepMin = " min ";
-		$.jPlayer.timeFormat.sepSec = " sec";
-
-		my_jPlayer.jPlayer({
-			ready: function() {
-				ready = true;
-				$(this).jPlayer("setMedia", stream);
-			},
-			timeupdate: function() {
-
-			},
-			play: function() {
-			},
-			pause: function() {
-				$(this).jPlayer("clearMedia");
-			},
-			ended: function() {
-			},
-			error: function() {
-				if (ready && event.jPlayer.error.type === $.jPlayer.error.URL_NOT_SET) {
-					$(this).jPlayer("setMedia", stream).jPlayer("play");
-				}
-			},
-			swfPath: "js",
-			cssSelectorAncestor: "#jp_container",
-			supplied: "mp3",
-			preload: "none",
-			wmode: "window"
-		});
-	},
-	_show : function() {
-		broadcastFm.show();
-		socialMedia.show();
-
-		broadcastFm.css('opacity', 1);
-		socialMedia.css('opacity', 1);
-
-		broadcastStatus.html('FM Live');
-
-		isFM = true;
-	},
-	_hide : function() {
-		my_jPlayer.jPlayer("clearMedia");
-		broadcastStatus.html('Offline');
-
-		broadcastFm.hide();
-		socialMedia.hide();
-	}
-};
-
-// site posts object
-var posts = {
-	init : function() {
-		$.getJSON("http://novaramedia.com/api/all/?callback=?", null, function(data) {
-			var posts_insert = [];
-			$.each(data.posts, function(i, item) {
-				posts_insert.push('<a target="_blank" href="' + item.permalink + '"><li>' + item.title + '</li></a>');
-			});
-			$('<ul/>', {
-				'id': 'site-posts-posts',
-				html: posts_insert.join('')
-			}).prependTo(sitePosts);
-		});
-	},
-	_show : function() {
-		archiveLink();
-		sitePostsSection.show().css('opacity', 1);
-		isPosts = true;
-	},
-	_hide : function() {
-		sitePostsSection.hide();
-		archive.hide();
-	}
-};
-
-player.init();
-posts.init();
-
-$(document).ready(function () {
-
-	/* CHECK IF LIVE */
-	function liveLogic() {
-		var liveCheck = isLive();
-		if (live && liveCheck) {
-			player._show();
-			posts._hide();
-
-			isPosts = false;
-		} else if (live && !liveCheck) {
-			player._hide();
-			posts._show();
-
-			live = false;
-			isFM = false;
-		} else if (!live && liveCheck) {
-			player._show();
-			posts._hide();
-
-			isPosts = false;
-			live = true;
-		} else if (!live && !liveCheck) {
-			player._hide();
-			posts._show();
-
-			isFM = false;
-		}
-	}
-	liveLogic();
-	var timer;
-	timer = setInterval(function() {
-		liveLogic();
-	}, 1000);
-
-});

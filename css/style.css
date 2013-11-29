@@ -285,6 +285,7 @@ div.tweets ul.update-results:first-child {
 #site-posts {
 	display: none;
 	opacity: 0;
+	margin-top: 50px;
 }
 
 #site-posts-posts {
@@ -307,6 +308,13 @@ div.tweets ul.update-results:first-child {
 #site-posts-posts li:hover {
 	background-color: white;
 	color: black;
+}
+
+/* ARCHIVE FM */
+
+#archive {
+	display: none;
+	margin-top: 50px;
 }
 
 /* SCALEABLE */
