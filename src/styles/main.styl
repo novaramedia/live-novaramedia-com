@@ -1,0 +1,134 @@
+@import "resets"
+@import "novara"
+
+#header
+  background-image: url(/build/img/working/marble-1400.jpg)
+
+#logo-nm
+  height: 55px
+  width: 55px
+
+.js-live
+  display: none
+
+// Liveplayer
+
+#live
+  padding-top: $margin-basic
+  padding-bottom: $margin-basic
+
+// Twitter widgets
+
+.twitter-timeline
+  width: 100% !important
+
+// Latest Posts
+
+#latest
+  margin-top: $margin-basic
+
+.latest-post
+  margin-top: $margin-small
+  margin-bottom: $margin-small
+  h3
+    margin-top: $margin-tiny
+
+@media screen and (max-width: ($col * $cols)+($gutter * $cols))
+
+  $gutter = 16px
+  $margin-tiny = ($gutter/2)
+  $margin-small = $gutter
+  $margin-basic = ($gutter*3)
+  $margin-large = ($gutter*5)
+
+  // Liveplayer
+
+  #live
+    padding-top: $margin-basic
+    padding-bottom: $margin-basic
+
+  // Latest Posts
+
+  #latest
+    margin-top: $margin-basic
+
+  .latest-post
+    margin-top: $margin-small
+    margin-bottom: $margin-small
+    h3
+      margin-top: $margin-tiny
+
+@media screen and (max-width: 1152px)
+
+  $gutter = 12px
+  $margin-tiny = ($gutter/2)
+  $margin-small = $gutter
+  $margin-basic = ($gutter*3)
+  $margin-large = ($gutter*5)
+
+  // Liveplayer
+
+  #live
+    padding-top: $margin-basic
+    padding-bottom: $margin-basic
+
+  // Latest Posts
+
+  #latest
+    margin-top: $margin-basic
+
+  .latest-post
+    margin-top: $margin-small
+    margin-bottom: $margin-small
+    h3
+      margin-top: $margin-tiny
+
+@media screen and (max-width: 912px)
+
+  $gutter = 8px
+  $margin-tiny = ($gutter/2)
+  $margin-small = $gutter
+  $margin-basic = ($gutter*3)
+  $margin-large = ($gutter*5)
+
+  // Liveplayer
+
+  #live
+    padding-top: $margin-basic
+    padding-bottom: $margin-basic
+
+  // Latest Posts
+
+  #latest
+    margin-top: $margin-basic
+
+  .latest-post
+    margin-top: $margin-small
+    margin-bottom: $margin-small
+    h3
+      margin-top: $margin-tiny
+
+@media screen and (max-width: 696px)
+
+  $gutter = 8px
+  $margin-tiny = ($gutter/2)
+  $margin-small = $gutter
+  $margin-basic = ($gutter*3)
+  $margin-large = ($gutter*5)
+
+  // Liveplayer
+
+  #live
+    padding-top: $margin-basic
+    padding-bottom: $margin-basic
+
+  // Latest Posts
+
+  #latest
+    margin-top: $margin-basic
+
+  .latest-post
+    margin-top: $margin-small
+    margin-bottom: $margin-small
+    h3
+      margin-top: $margin-tiny
