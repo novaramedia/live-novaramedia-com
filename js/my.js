@@ -121,12 +121,14 @@ var isPosts;
 
 // display currently playing on Archive FM
 function archiveLink() {
+/*
 	$.getJSON("http://novaramedia.com/labs/icecast2_status/?callback=?", null, function(data) {
 			if (data.title.length) {
 				$('#archive-title').text(data.title);
 				archive.show();
 			}
 	});
+*/
 }
 
 // replace svg with png for unsupported browsers
