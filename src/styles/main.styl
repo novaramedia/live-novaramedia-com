@@ -17,6 +17,37 @@
   padding-top: $margin-basic
   padding-bottom: $margin-basic
 
+.jp-controls-holder, .jp-volume-controls
+  float: left
+
+.jp-controls-holder
+  margin-right: $margin-tiny
+
+.jp-button
+  display: block
+  height: 5em
+  width: 5em
+  text-align: center
+  border: 2px solid white
+
+.jp-stop
+  display: none
+
+.jp-volume-bar
+  position: relative
+  width: 5em
+  height: 5em
+  border: 2px solid white
+
+.jp-button, .jp-volume-bar
+  &:hover
+    cursor: pointer
+
+.jp-volume-bar-value
+  background-color: white
+  position:relative
+  height: 5em
+
 // Twitter widgets
 
 .twitter-timeline
@@ -47,6 +78,9 @@
     padding-top: $margin-basic
     padding-bottom: $margin-basic
 
+  .jp-controls-holder
+    margin-right: $margin-tiny
+
   // Latest Posts
 
   #latest
@@ -71,6 +105,9 @@
   #live
     padding-top: $margin-basic
     padding-bottom: $margin-basic
+
+  .jp-controls-holder
+    margin-right: $margin-tiny
 
   // Latest Posts
 
@@ -116,11 +153,34 @@
   $margin-basic = ($gutter*3)
   $margin-large = ($gutter*5)
 
+  .col.mobile-split-half
+    width: 50%
+    float: left
+
   // Liveplayer
 
   #live
     padding-top: $margin-basic
     padding-bottom: $margin-basic
+
+  .jp-controls-holder
+    margin-right: $margin-tiny
+
+  .jp-button
+    height: 4em
+    width: 4em
+
+  .jp-volume-bar
+    width: 4em
+    height: 4em
+
+  .jp-volume-bar-value
+    height: 4em
+
+  // Twitter
+
+  #twitter-novara-timeline
+    display: none
 
   // Latest Posts
 
