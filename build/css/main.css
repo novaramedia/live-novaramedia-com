@@ -1395,7 +1395,8 @@ img {
   height: 55px;
   width: 55px;
 }
-.js-live {
+.js-live,
+ul.u-inline-list li.js-live {
   display: none;
 }
 #live {
