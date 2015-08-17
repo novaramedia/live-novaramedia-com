@@ -1,0 +1,202 @@
+@import "resets"
+@import "novara"
+
+#header
+  background-image: url(/build/img/working/marble-1400.jpg)
+
+#logo-nm
+  height: 55px
+  width: 55px
+
+.js-live, ul.u-inline-list li.js-live
+  display: none
+
+// Liveplayer
+
+#live
+  padding-top: $margin-basic
+  padding-bottom: $margin-basic
+
+.jp-controls-holder, .jp-volume-controls
+  float: left
+
+.jp-controls-holder
+  margin-right: $margin-tiny
+
+.jp-button
+  display: block
+  height: 5em
+  width: 5em
+  text-align: center
+  border: 2px solid white
+
+.jp-stop
+  display: none
+
+.jp-volume-bar
+  position: relative
+  width: 5em
+  height: 5em
+  border: 2px solid white
+
+.jp-button, .jp-volume-bar
+  &:hover
+    cursor: pointer
+
+.jp-volume-bar-value
+  background-color: white
+  position:relative
+  height: 5em
+
+// Twitter widgets
+
+//.twitter-timeline
+//  width: 100% !important
+
+.twitter-wrapper
+  max-width: 520px
+  margin: 0 auto
+
+// Latest Posts
+
+#latest
+  margin-top: $margin-basic
+
+.latest-post
+  margin-top: $margin-small
+  margin-bottom: $margin-small
+  h3
+    margin-top: $margin-tiny
+
+.latest-post-wrapper
+  max-width: 355px
+  margin: 0 auto
+
+@media screen and (max-width: ($col * $cols)+($gutter * $cols))
+
+  $gutter = 16px
+  $margin-tiny = ($gutter/2)
+  $margin-small = $gutter
+  $margin-basic = ($gutter*3)
+  $margin-large = ($gutter*5)
+
+  // Liveplayer
+
+  #live
+    padding-top: $margin-basic
+    padding-bottom: $margin-basic
+
+  .jp-controls-holder
+    margin-right: $margin-tiny
+
+  // Latest Posts
+
+  #latest
+    margin-top: $margin-basic
+
+  .latest-post
+    margin-top: $margin-small
+    margin-bottom: $margin-small
+    h3
+      margin-top: $margin-tiny
+
+@media screen and (max-width: 1152px)
+
+  $gutter = 12px
+  $margin-tiny = ($gutter/2)
+  $margin-small = $gutter
+  $margin-basic = ($gutter*3)
+  $margin-large = ($gutter*5)
+
+  // Liveplayer
+
+  #live
+    padding-top: $margin-basic
+    padding-bottom: $margin-basic
+
+  .jp-controls-holder
+    margin-right: $margin-tiny
+
+  // Latest Posts
+
+  #latest
+    margin-top: $margin-basic
+
+  .latest-post
+    margin-top: $margin-small
+    margin-bottom: $margin-small
+    h3
+      margin-top: $margin-tiny
+
+@media screen and (max-width: 912px)
+
+  $gutter = 8px
+  $margin-tiny = ($gutter/2)
+  $margin-small = $gutter
+  $margin-basic = ($gutter*3)
+  $margin-large = ($gutter*5)
+
+  // Liveplayer
+
+  #live
+    padding-top: $margin-basic
+    padding-bottom: $margin-basic
+
+  // Latest Posts
+
+  #latest
+    margin-top: $margin-basic
+
+  .latest-post
+    margin-top: $margin-small
+    margin-bottom: $margin-small
+    h3
+      margin-top: $margin-tiny
+
+@media screen and (max-width: 696px)
+
+  $gutter = 8px
+  $margin-tiny = ($gutter/2)
+  $margin-small = $gutter
+  $margin-basic = ($gutter*3)
+  $margin-large = ($gutter*5)
+
+  .col.mobile-split-half
+    width: 50%
+    float: left
+
+  // Liveplayer
+
+  #live
+    padding-top: $margin-basic
+    padding-bottom: $margin-basic
+
+  .jp-controls-holder
+    margin-right: $margin-tiny
+
+  .jp-button
+    height: 4em
+    width: 4em
+
+  .jp-volume-bar
+    width: 4em
+    height: 4em
+
+  .jp-volume-bar-value
+    height: 4em
+
+  // Twitter
+
+  #twitter-novara-timeline
+    display: none
+
+  // Latest Posts
+
+  #latest
+    margin-top: $margin-basic
+
+  .latest-post
+    margin-top: $margin-small
+    margin-bottom: $margin-small
+    h3
+      margin-top: $margin-tiny

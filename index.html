@@ -1,109 +1,228 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-	<title>Novara Media Live</title>
-	<meta name="description" content="Listen to and watch Novara Media live">
-	<meta name="keywords" content="novara media, novarafm, live, player" />
-	<meta name="author" content="Novara Media">
-	<meta name="viewport" content="initial-scale=1.0">
+<html lang="en" prefix="og: http://ogp.me/ns#">
+    <head>
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
 
-	<meta name="twitter:card" content="summary">
-	<meta name="twitter:site" content="@novaramedia">
-	<meta property="og:url" content="http://live.novaramedia.com/"/>
-	<meta property="og:title" content="Novara Media Live" />
-	<meta property="og:description" content="Listen to and watch Novara Media live" />
-	<meta property="og:type" content="website" />
-	<meta property="og:site_name" content="Novara Media" />
-	<meta property="og:image" content="/img/opengraph-logo.png" />
+      <title>NovaraFM Live</title>
+      <meta name="description" content="Listen to NovaraFM live. Powered by Resonance FM">
+      <meta name="keywords" content="novara media, novarafm, live, player" />
+      <meta name="author" content="Novara Media">
+      <meta name="viewport" content="initial-scale=1.0">
 
-	<link rel="icon" href="img/favicon.png">
-	<link rel="shortcut" href="img/favicon.ico">
-	<link rel="apple-touch-icon" href="img/favicon-touch.png">
-	<link rel="apple-touch-icon" sizes="114x114" href="img/favicon.png">
-	<link rel="stylesheet" href="css/style.css">
+      <meta name="twitter:card" content="summary">
+      <meta name="twitter:site" content="@novaramedia">
+      <meta property="og:url" content="http://live.novaramedia.com/"/>
+      <meta property="og:title" content="NovaraFM Live" />
+      <meta property="og:description" content="Listen to NovaraFM live. Powered by Resonance FM" />
+      <meta property="og:type" content="website" />
+      <meta property="og:site_name" content="Novara Media" />
+      <meta property="og:image" content="build/img/opengraph-logo.png" />
 
-	<script type="text/javascript">
-	;window.Modernizr=function(a,b,c){function v(a){j.cssText=a}function w(a,b){return v(prefixes.join(a+";")+(b||""))}function x(a,b){return typeof a===b}function y(a,b){return!!~(""+a).indexOf(b)}function z(a,b,d){for(var e in a){var f=b[a[e]];if(f!==c)return d===!1?a[e]:x(f,"function")?f.bind(d||b):f}return!1}var d="2.6.3",e={},f=!0,g=b.documentElement,h="modernizr",i=b.createElement(h),j=i.style,k,l={}.toString,m={svg:"http://www.w3.org/2000/svg"},n={},o={},p={},q=[],r=q.slice,s,t={}.hasOwnProperty,u;!x(t,"undefined")&&!x(t.call,"undefined")?u=function(a,b){return t.call(a,b)}:u=function(a,b){return b in a&&x(a.constructor.prototype[b],"undefined")},Function.prototype.bind||(Function.prototype.bind=function(b){var c=this;if(typeof c!="function")throw new TypeError;var d=r.call(arguments,1),e=function(){if(this instanceof e){var a=function(){};a.prototype=c.prototype;var f=new a,g=c.apply(f,d.concat(r.call(arguments)));return Object(g)===g?g:f}return c.apply(b,d.concat(r.call(arguments)))};return e}),n.svg=function(){return!!b.createElementNS&&!!b.createElementNS(m.svg,"svg").createSVGRect};for(var A in n)u(n,A)&&(s=A.toLowerCase(),e[s]=n[A](),q.push((e[s]?"":"no-")+s));return e.addTest=function(a,b){if(typeof a=="object")for(var d in a)u(a,d)&&e.addTest(d,a[d]);else{a=a.toLowerCase();if(e[a]!==c)return e;b=typeof b=="function"?b():b,typeof f!="undefined"&&f&&(g.className+=" "+(b?"":"no-")+a),e[a]=b}return e},v(""),i=k=null,function(a,b){function k(a,b){var c=a.createElement("p"),d=a.getElementsByTagName("head")[0]||a.documentElement;return c.innerHTML="x<style>"+b+"</style>",d.insertBefore(c.lastChild,d.firstChild)}function l(){var a=r.elements;return typeof a=="string"?a.split(" "):a}function m(a){var b=i[a[g]];return b||(b={},h++,a[g]=h,i[h]=b),b}function n(a,c,f){c||(c=b);if(j)return c.createElement(a);f||(f=m(c));var g;return f.cache[a]?g=f.cache[a].cloneNode():e.test(a)?g=(f.cache[a]=f.createElem(a)).cloneNode():g=f.createElem(a),g.canHaveChildren&&!d.test(a)?f.frag.appendChild(g):g}function o(a,c){a||(a=b);if(j)return a.createDocumentFragment();c=c||m(a);var d=c.frag.cloneNode(),e=0,f=l(),g=f.length;for(;e<g;e++)d.createElement(f[e]);return d}function p(a,b){b.cache||(b.cache={},b.createElem=a.createElement,b.createFrag=a.createDocumentFragment,b.frag=b.createFrag()),a.createElement=function(c){return r.shivMethods?n(c,a,b):b.createElem(c)},a.createDocumentFragment=Function("h,f","return function(){var n=f.cloneNode(),c=n.createElement;h.shivMethods&&("+l().join().replace(/\w+/g,function(a){return b.createElem(a),b.frag.createElement(a),'c("'+a+'")'})+");return n}")(r,b.frag)}function q(a){a||(a=b);var c=m(a);return r.shivCSS&&!f&&!c.hasCSS&&(c.hasCSS=!!k(a,"article,aside,figcaption,figure,footer,header,hgroup,nav,section{display:block}mark{background:#FF0;color:#000}")),j||p(a,c),a}var c=a.html5||{},d=/^<|^(?:button|map|select|textarea|object|iframe|option|optgroup)$/i,e=/^(?:a|b|code|div|fieldset|h1|h2|h3|h4|h5|h6|i|label|li|ol|p|q|span|strong|style|table|tbody|td|th|tr|ul)$/i,f,g="_html5shiv",h=0,i={},j;(function(){try{var a=b.createElement("a");a.innerHTML="<xyz></xyz>",f="hidden"in a,j=a.childNodes.length==1||function(){b.createElement("a");var a=b.createDocumentFragment();return typeof a.cloneNode=="undefined"||typeof a.createDocumentFragment=="undefined"||typeof a.createElement=="undefined"}()}catch(c){f=!0,j=!0}})();var r={elements:c.elements||"abbr article aside audio bdi canvas data datalist details figcaption figure footer header hgroup mark meter nav output progress section summary time video",shivCSS:c.shivCSS!==!1,supportsUnknownElements:j,shivMethods:c.shivMethods!==!1,type:"default",shivDocument:q,createElement:n,createDocumentFragment:o};a.html5=r,q(b)}(this,b),e._version=d,g.className=g.className.replace(/(^|\s)no-js(\s|$)/,"$1$2")+(f?" js "+q.join(" "):""),e}(this,this.document);
-	</script>
+      <link rel="apple-touch-icon" sizes="57x57" href="build/img/favicons/apple-touch-icon-57x57.png">
+      <link rel="apple-touch-icon" sizes="60x60" href="build/img/favicons/apple-touch-icon-60x60.png">
+      <link rel="apple-touch-icon" sizes="72x72" href="build/img/favicons/apple-touch-icon-72x72.png">
+      <link rel="apple-touch-icon" sizes="76x76" href="build/img/favicons/apple-touch-icon-76x76.png">
+      <link rel="apple-touch-icon" sizes="114x114" href="build/img/favicons/apple-touch-icon-114x114.png">
+      <link rel="apple-touch-icon" sizes="120x120" href="build/img/favicons/apple-touch-icon-120x120.png">
+      <link rel="apple-touch-icon" sizes="144x144" href="build/img/favicons/apple-touch-icon-144x144.png">
+      <link rel="apple-touch-icon" sizes="152x152" href="build/img/favicons/apple-touch-icon-152x152.png">
+      <link rel="apple-touch-icon" sizes="180x180" href="build/img/favicons/apple-touch-icon-180x180.png">
+      <link rel="icon" type="image/png" href="build/img/favicons/favicon-32x32.png" sizes="32x32">
+      <link rel="icon" type="image/png" href="build/img/favicons/favicon-194x194.png" sizes="194x194">
+      <link rel="icon" type="image/png" href="build/img/favicons/favicon-96x96.png" sizes="96x96">
+      <link rel="icon" type="image/png" href="build/img/favicons/android-chrome-192x192.png" sizes="192x192">
+      <link rel="icon" type="image/png" href="build/img/favicons/favicon-16x16.png" sizes="16x16">
+      <link rel="manifest" href="build/img/favicons/manifest.json">
+      <link rel="shortcut icon" href="build/img/favicons/favicon.ico">
+      <meta name="msapplication-TileColor" content="#b91d47">
+      <meta name="msapplication-TileImage" content="build/img/favicons/mstile-144x144.png">
+      <meta name="msapplication-config" content="build/img/favicons/browserconfig.xml">
+      <meta name="theme-color" content="#ffffff">
 
-</head>
-<body>
-	<div id="container" class="clearfix">
-		<header class="clearfix">
+      <link rel="stylesheet" href="build/css/main.min.css">
 
-			<div id="logo">
-				<img src="img/novaramedia-logo-black.svg" width="98" height="80" alt="Novara Media">
-			</div>
-			<div id="clock"></div>
-			<div id="broadcast-status-holder"><h2 id="broadcast-status" class="underline">Offline</h2></div>
+      <!--[if lt IE 9]>
+          <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+          <script>window.html5 || document.write('<script src="js/vendor/html5shiv.js"><\/script>')</script>
+      <![endif]-->
+    </head>
+    <body>
+<!--[if lt IE 7]><p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p><![endif]-->
 
-		</header>
+        <!-- start content -->
+        <header id="header" class="font-white">
+          <div class="container">
+            <div class="row">
+              <div class="col col12">
+                <nav id="header-drawer-toggle" class="u-inline-block u-pointer js-toggle-drawer"><span class="genericon genericon-menu"></span></nav>
+                <ul id="header-top-menu" class="u-inline-block u-inline-list">
+                  <li class="js-offline">&#8605; NovaraFM OFFLINE</a>
+                  <li class="js-live">&#8605; NovaraFM LIVE</li>
+                </ul>
+              </div>
+              <div class="col col12 u-align-right">
+                <a href="http://novaramedia.com">
+                  <svg id="logo-nm" xmlns="http://www.w3.org/2000/svg" width="894.125" height="728.168" viewBox="0 0 894.125 728.168"><path fill="#fff" d="M535.117 0h-176.109v285.642l-171.388-285.642h-167.299v582.534h176.117v-252.48l172.148 252.48h156.953l172.149-252.48v252.48h176.116v-582.534h-167.291l-171.396 285.642v-285.642m-379.321 198.297v343.594h-94.832v-501.248h103.649l235.037 391.732v-391.732h94.825v501.249h-104.404l-234.275-343.595zm738.329 529.871h-894.125v-81.283h894.125v81.283z"/></svg>
+                </a>
+              </div>
+            </div>
+          </div>
+        </header>
 
-		<section id="main">
-			<section id="broadcast" class="invert">
-				<div id="broadcast-tv"></div>
+        <section id="drawer-main" class="drawer font-white background-gray">
+          <div class="container">
+            <div class="row">
+              <div class="col col8">
+                <ul class="u-inline-list">
+                  <li><a href="http://novaramedia.com/category/tv/">&#8605; TV</a></li>
+                  <li><a href="http://novaramedia.com/category/fm/">&#8605; FM</a></li>
+                  <li><a href="http://wire.novaramedia.com">&#8605; Wire</a>
+                </ul>
+              </div>
+               <div class="col col8">
+                <ul class="u-inline-list">
+                  <li><a href="https://twitter.com/novaramedia">Twitter</a></li>
+                  <li><a href="https://www.facebook.com/pages/NovaraMedia/404716342902872">Facebook</a></li>
+                  <li><a href="https://www.youtube.com/channel/UCOzMAa6IhV6uwYQATYG_2kg">YouTube</a></li>
+                  <li><a href="http://novaramedia.tumblr.com/">Tumblr</a></li>
+                </ul>
+              </div>
+               <div class="col col8">
+                <ul class="u-inline-list">
+                  <li><a href="http://podcast.novaramedia.com" target="_blank">Podcast</a></li>
+                  <li><a href="itpc://feeds.feedburner.com/NovaraMediaPodcast">Subscribe in iTunes</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </section>
 
-				<div id="broadcast-fm">
-					<div id="jplayer"></div>
-					<div id="jp_container" class="fm-container clearfix">
-			<div class="float-half">
-				<span class="startstop"><a class="jp-play" href="#">Play</a><a class="jp-pause" href="#">Stop</a></span>
-			</div>
+        <section id="live" class="font-white background-red js-live">
+          <div class="container">
+            <div class="row">
+              <div class="col col8 mobile-split-half">
 
-			<div class="float-half alignright">
-			<ul>
-				<li><a class="jp-mute" href="#">Mute</a><a class="jp-unmute" href="#">Unmute</a></li>
-				<li class="vbottom"><div class="jp-volume-bar">
-					<div class="jp-volume-bar-mn"></div>
-					<div class="jp-volume-bar-value"></div>
-				</div></li>
-				<li><a class="jp-volume-max" href="#">Max</a></li>
-			</ul>
-			</div>
-		</div>
+                <div id="jplayer" class="jp-jplayer"></div>
+                  <div id="jp_container_1" class="jp-audio" role="application" aria-label="media player">
+                    <div class="jp-type-single">
+                      <div class="jp-gui jp-interface">
+                        <div class="jp-controls-holder">
+                          <div class="jp-controls">
+                            <div class="jp-button jp-play">
+                              <div class="u-holder">
+                                <div class="u-held">
+                                  <h2>&ensp;&#9654;</h2>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="jp-button jp-stop">
+                              <div class="u-holder">
+                                <div class="u-held">
+                                  <h2>&#9621; &#9615;</h2>
+                                 </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="jp-volume-controls">
+                          <div class="jp-volume-bar">
+                            <div class="jp-volume-bar-value"></div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="jp-no-solution">
+                        <span>Update Required</span>
+                        To play the media you will need to either update your browser to a recent version or update your <a href="http://get.adobe.com/flashplayer/" target="_blank">Flash plugin</a>.
+                      </div>
+                    </div>
+                  </div>
 
-				</div>
-			</section>
+              </div>
 
-			<section id="social-media" class="clearfix">
-				<div id="social-media-nm" class="float-half">
-					<div class="tweets">
-						<a class="twitter-timeline" data-dnt="true" href="https://twitter.com/novaramedia" data-widget-id="306202060615983105">Tweets by @novaramedia</a>
-<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+              <div class="col col8 mobile-split-half">
+                <h3>¡NovaraFM Live now!</h3>
+              </div>
+            </div>
+          </div>
+        </section>
 
-					</div>
-				</div>
+        <section id="main-content" class="container">
+          <div class="row js-live">
+            <div class="col col12" id="twitter-novara-timeline">
+              <div class="twitter-wrapper">
+                <a class="twitter-timeline" data-dnt="true" href="https://twitter.com/novaramedia" data-widget-id="306202060615983105"></a>
+              </div>
+            </div>
+            <div class="col col12">
+              <div class="twitter-wrapper">
+                <a class="twitter-timeline" data-dnt="true" href="https://twitter.com/search?q=%23novarafm" data-widget-id="306202410764865536"></a>
+              </div>
+            </div>
+          </div>
 
-				<div id="social-media-hashtag" class="float-half">
-					<div class="tweets">
-						<a class="twitter-timeline" data-dnt="true" href="https://twitter.com/search?q=%23novarafm" data-widget-id="306202410764865536">Tweets about "#novarafm"</a>
-<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
-					</div>
-				</div>
-			</section>
+          <div id="latest" class="row">
+            <div class="col col8">
+              <h3 class="underline">Latest on NovaraFM</h3>
+              <ul id="latest-fm">
 
-			<section id="site-posts" class="clearfix">
-				<h3 class="underline">Latest on <a href="http://novaramedia.com">novaramedia.com</a></h3>
-				<div class="posts"></div>
-			</section>
+              </ul>
+            </div>
+            <div class="col col8">
+              <h3 class="underline">Latest on NovaraTV</h3>
+              <ul id="latest-tv">
 
-		</section>
+              </ul>
+            </div>
+            <div class="col col8">
+              <h3 class="underline">Latest on NovaraWire</h3>
+              <ul id="latest-wire">
 
-	</div>
-	<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-	<script src="js/schedule.min.js"></script>
-	<script src="js/my.js"></script>
-	<script type="text/javascript">
-  var _gaq = _gaq || [];
-  _gaq.push(['_setAccount', 'UA-37044100-3']);
-  _gaq.push(['_trackPageview']);
-  (function() {
-    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-  })();
-  	</script>
-</body>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <footer id="footer" class="font-white background-black">
+          <div class="container">
+            <div class="row">
+              <div class="col col18">
+                <ul class="u-inline-list font-smaller">
+                  <li><a href="http://novaramedia.com/category/tv/">NovaraTV</a></li>
+                  <li><a href="http://novaramedia.com/category/fm/">NovaraFM</a></li>
+                  <li><a href="http://wire.novaramedia.com">NovaraWire</a></li>
+                  <li><a href="http://support.novaramedia.com">Support Us</a></li>
+                  <li><a href="https://twitter.com/novaramedia">Twitter</a></li>
+                  <li><a href="https://www.facebook.com/pages/NovaraMedia/404716342902872">Facebook</a></li>
+                  <li><a href="https://www.youtube.com/channel/UCOzMAa6IhV6uwYQATYG_2kg">YouTube</a></li>
+                  <li><a href="http://novaramedia.tumblr.com/">Tumblr</a></li>
+                  <li><a href="http://podcast.novaramedia.com">Podcast</a></li>
+                  <li><a href="itpc://feeds.feedburner.com/NovaraMediaPodcast">Subscribe in iTunes</a></li>
+               </ul>
+              </div>
+            </div>
+          </div>
+        </footer>
+
+        <section id="scripts">
+          <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+          <script>window.jQuery || document.write('<script src="build//js/jquery.min.js"><\/script>')</script>
+          <script src="build/js/jquery.jplayer.min.js"></script>
+          <script src="build/js/main.js"></script>
+
+          <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+
+          <script type="text/javascript">
+            var _gaq = _gaq || [];
+            _gaq.push(['_setAccount', 'UA-37044100-3']);
+            _gaq.push(['_trackPageview']);
+            (function() {
+              var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+              ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+              var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+            })();
+          </script>
+        </section>
+    </body>
 </html>
