@@ -28,12 +28,10 @@ var player = {
         $(this).jPlayer('setMedia', {
           title: 'resonancefm',
           mp3: 'http://radio.canstream.co.uk:8004/live.mp3',
-//           oga: "http://www.jplayer.org/audio/ogg/Miaow-07-Bubble.ogg"
         });
       },
       cssSelectorAncestor: '#jp_container_1',
       swfPath: '/js',
-//       supplied: "mp3, oga",
       supplied: 'mp3',
       useStateClassSkin: true,
       autoBlur: false,
@@ -62,6 +60,10 @@ var latestPosts = {
       var posts_insert = [];
 
       $.each(data.posts, function(i, item) {
+        if (i > 4) {
+          return false;
+        }
+
         posts_insert.push('<a target="_blank" href="' + item.permalink + '"><li class="latest-post"><div class="latest-post-wrapper"><img src="' + item.thumb_medium + '"/><h3>'+ item.title + '</h3></div></li></a>');
       });
       $(posts_insert.join('')).prependTo(_this.$latestFm);
@@ -75,6 +77,10 @@ var latestPosts = {
       var posts_insert = [];
 
       $.each(data.posts, function(i, item) {
+        if (i > 4) {
+          return false;
+        }
+
         posts_insert.push('<a target="_blank" href="' + item.permalink + '"><li class="latest-post"><div class="latest-post-wrapper"><img src="' + item.thumb_medium + '"/><h3>'+ item.title + '</h3></div></li></a>');
       });
       $(posts_insert.join('')).prependTo(_this.$latestTv);
@@ -92,6 +98,10 @@ var latestPosts = {
       var posts_insert = [];
 
       $.each(data.posts, function(i, item) {
+        if (i > 4) {
+          return false;
+        }
+
         posts_insert.push('<a target="_blank" href="' + item.permalink + '"><li class="latest-post"><div class="latest-post-wrapper"><img src="' + item.thumb_medium + '"/><h3>'+ item.title + '</h3><h4>by '+ item.author + '</h4></div></li></a>');
       });
       $(posts_insert.join('')).prependTo(_this.$latestWire);
@@ -110,9 +120,6 @@ var latestPosts = {
 
 jQuery(document).ready(function($) {
 
-  // THIS IS JUST FOR TESTING
-      liveStatus.live();
-/*
   $.getScript('http://tools.novaramedia.com/tool/novara_live/schedule.min.js', function() {
     if (isLive()) {
       liveStatus.live();
@@ -126,7 +133,6 @@ jQuery(document).ready(function($) {
       }
     }), 15000);
   });
-*/
 
   latestPosts.init();
 
