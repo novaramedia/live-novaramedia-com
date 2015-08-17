@@ -13,12 +13,41 @@ var liveStatus = {
   live: function() {
     $jsLive.show();
     $('.js-offline').hide();
+    player.init();
   },
   offline: function() {
     $('.js-offline').show();
     $jsLive.hide();
   }
 };
+
+var player = {
+  init: function() {
+    $('#jplayer').jPlayer({
+      ready: function () {
+        $(this).jPlayer('setMedia', {
+          title: 'resonancefm',
+          mp3: 'http://radio.canstream.co.uk:8004/live.mp3',
+//           oga: "http://www.jplayer.org/audio/ogg/Miaow-07-Bubble.ogg"
+        });
+      },
+      cssSelectorAncestor: '#jp_container_1',
+      swfPath: '/js',
+//       supplied: "mp3, oga",
+      supplied: 'mp3',
+      useStateClassSkin: true,
+      autoBlur: false,
+      smoothPlayBar: true,
+      keyEnabled: true,
+    }).bind($.jPlayer.event.play, function() {
+      $('.jp-play').hide();
+      $('.jp-stop').show();
+    }).bind($.jPlayer.event.pause, function() {
+      $('.jp-stop').hide();
+      $('.jp-play').show();
+    });
+  }
+}
 
 var latestPosts = {
   visible: false,

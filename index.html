@@ -108,12 +108,48 @@
         <section id="live" class="font-white background-red js-live">
           <div class="container">
             <div class="row">
-              <div class="col col8">
-               *player controls*
+              <div class="col col8 mobile-split-half">
+
+                <div id="jplayer" class="jp-jplayer"></div>
+                  <div id="jp_container_1" class="jp-audio" role="application" aria-label="media player">
+                    <div class="jp-type-single">
+                      <div class="jp-gui jp-interface">
+                        <div class="jp-controls-holder">
+                          <div class="jp-controls">
+                            <div class="jp-button jp-play">
+                              <div class="u-holder">
+                                <div class="u-held">
+                                  <h2>&ensp;&#9654;</h2>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="jp-button jp-stop">
+                              <div class="u-holder">
+                                <div class="u-held">
+                                  <h2>&#9621; &#9615;</h2>
+                                 </div>
+                              </div>
+                            </div>
+                          </div>
+<!--                           <div class="jp-current-time" role="timer" aria-label="time">&nbsp;</div> -->
+                        </div>
+                        <div class="jp-volume-controls">
+                          <div class="jp-volume-bar">
+                            <div class="jp-volume-bar-value"></div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="jp-no-solution">
+                        <span>Update Required</span>
+                        To play the media you will need to either update your browser to a recent version or update your <a href="http://get.adobe.com/flashplayer/" target="_blank">Flash plugin</a>.
+                      </div>
+                    </div>
+                  </div>
+
               </div>
 
-              <div class="col col8">
-                *now playing [but how?] or just 'Live now!'*
+              <div class="col col8 mobile-split-half">
+                <h3>¡NovaraFM Live now!</h3>
               </div>
             </div>
           </div>
@@ -121,7 +157,7 @@
 
         <section id="main-content" class="container">
           <div class="row js-live">
-            <div class="col col12">
+            <div class="col col12" id="twitter-novara-timeline">
               <a class="twitter-timeline" data-dnt="true" href="https://twitter.com/novaramedia" data-widget-id="306202060615983105"></a>
             </div>
             <div class="col col12">
@@ -175,7 +211,7 @@
         <section id="scripts">
           <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
           <script>window.jQuery || document.write('<script src="build//js/jquery.min.js"><\/script>')</script>
-          <script src="build/js/lib.js"></script>
+          <script src="build/js/jquery.jplayer.min.js"></script>
           <script src="build/js/main.js"></script>
 
           <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>

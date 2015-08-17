@@ -1402,6 +1402,38 @@ img {
   padding-top: 72px;
   padding-bottom: 72px;
 }
+.jp-controls-holder,
+.jp-volume-controls {
+  float: left;
+}
+.jp-controls-holder {
+  margin-right: 12px;
+}
+.jp-button {
+  display: block;
+  height: 5em;
+  width: 5em;
+  text-align: center;
+  border: 2px solid #fff;
+}
+.jp-stop {
+  display: none;
+}
+.jp-volume-bar {
+  position: relative;
+  width: 5em;
+  height: 5em;
+  border: 2px solid #fff;
+}
+.jp-button:hover,
+.jp-volume-bar:hover {
+  cursor: pointer;
+}
+.jp-volume-bar-value {
+  background-color: #fff;
+  position: relative;
+  height: 5em;
+}
 .twitter-timeline {
   width: 100% !important;
 }
@@ -1420,6 +1452,9 @@ img {
     padding-top: 48px;
     padding-bottom: 48px;
   }
+  .jp-controls-holder {
+    margin-right: 8px;
+  }
   #latest {
     margin-top: 48px;
   }
@@ -1435,6 +1470,9 @@ img {
   #live {
     padding-top: 36px;
     padding-bottom: 36px;
+  }
+  .jp-controls-holder {
+    margin-right: 6px;
   }
   #latest {
     margin-top: 36px;
@@ -1464,9 +1502,30 @@ img {
   }
 }
 @media screen and (max-width: 696px) {
+  .col.mobile-split-half {
+    width: 50%;
+    float: left;
+  }
   #live {
     padding-top: 24px;
     padding-bottom: 24px;
+  }
+  .jp-controls-holder {
+    margin-right: 4px;
+  }
+  .jp-button {
+    height: 4em;
+    width: 4em;
+  }
+  .jp-volume-bar {
+    width: 4em;
+    height: 4em;
+  }
+  .jp-volume-bar-value {
+    height: 4em;
+  }
+  #twitter-novara-timeline {
+    display: none;
   }
   #latest {
     margin-top: 24px;
