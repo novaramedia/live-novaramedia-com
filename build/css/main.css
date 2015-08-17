@@ -1434,8 +1434,9 @@ img {
   position: relative;
   height: 5em;
 }
-.twitter-timeline {
-  width: 100% !important;
+.twitter-wrapper {
+  max-width: 520px;
+  margin: 0 auto;
 }
 #latest {
   margin-top: 72px;
@@ -1446,6 +1447,10 @@ img {
 }
 .latest-post h3 {
   margin-top: 12px;
+}
+.latest-post-wrapper {
+  max-width: 355px;
+  margin: 0 auto;
 }
 @media screen and (max-width: 1296px) {
   #live {
