@@ -1,15 +1,8 @@
-live.novaramedia.com dev branch
----
+=======
+Our live player v2.0 Found at [live.novaramedia.com](http://live.novaramedia.com).
 
-setup:
+Currently supports FM only, with a live and offline state. The live state plays the Resonance FM stream with two twitter plugins to show @novaramedia and #novarafm. The offline state pulls titles and links to the latest 5 posts on novaramedia.com and wire.novaramedia.com
 
-- npm install
-- gulp [think it is buggy tho oops]
+### what you can do [if you want]
 
----
-
-todo:
-
-- jPlayer setup
-- limit to latest posts?
-- now playing status for live shows? how?
+Check the develop branch for development. Add any bugs or enhancement suggestions as Github issues. Make Pull Requests or get in touch in another way. Please comment any code submitted.
