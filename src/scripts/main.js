@@ -1,13 +1,19 @@
-var animationLength, l, layout, $mainContent;
+/* jshint browser: true, devel: true, indent: 2, curly: true, eqeqeq: true, futurehostile: true, latedef: true, undef: true, unused: true */
+/* global $, jQuery, document */
 
-l = function(data) {
-  return console.log(data);
-};
-
-animationLength = 200;
-$mainContent = $('#main-content');
+var animationLength = 200;
+var $mainContent = $('#main-content');
 var $jsLive = $('.js-live');
-var $jsOffline = $('.js-offline')
+
+var layout = function() {
+  var footerHeight, headerHeight, windowHeight;
+  windowHeight = $(window).height();
+  headerHeight = $('#header').outerHeight(true);
+  footerHeight = $('#footer').outerHeight(true);
+  return $mainContent.css({
+    'min-height': (windowHeight - headerHeight - footerHeight) + 'px'
+  });
+};
 
 var liveStatus = {
   live: function() {
@@ -45,7 +51,7 @@ var player = {
       $('.jp-play').show();
     });
   }
-}
+};
 
 var latestPosts = {
   visible: false,
@@ -116,7 +122,7 @@ var latestPosts = {
     this.initFmTv();
     this.initWire();
   }
-}
+};
 
 jQuery(document).ready(function($) {
 
@@ -153,14 +159,3 @@ jQuery(document).ready(function($) {
     });
   });
 });
-
-layout = function() {
-  var footerHeight, headerHeight, windowHeight;
-  windowHeight = $(window).height();
-  headerHeight = $('#header').outerHeight(true);
-  footerHeight = $('#footer').outerHeight(true);
-  return $mainContent.css({
-    'min-height': (windowHeight - headerHeight - footerHeight) + 'px'
-  });
-
-};

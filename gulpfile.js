@@ -12,7 +12,9 @@ var gulp = require('gulp'),
     minifycss = require('gulp-minify-css'),
 
     jshint = require('gulp-jshint'),
+    jscs = require('gulp-jscs'),
     uglify = require('gulp-uglify'),
+    sourcemaps = require('gulp-sourcemaps'),
 
     imagemin = require('gulp-imagemin'),
     fontgen = require("gulp-fontgen");
@@ -67,16 +69,20 @@ gulp.task('styles', function() {
 
 /* SCRIPT */
 gulp.task('script', function() {
-  return gulp.src('src/scripts/main.js')
-    .pipe(jshint())
-    .on('error', errorNotify)
-    .pipe(gulp.dest(destinations.js))
-    .pipe(rename({suffix: '.min'}))
-    .pipe(uglify())
-    .on('error', errorNotify)
-    .pipe(gulp.dest(destinations.js))
-    .pipe(connect.reload())
-    .pipe(notify({ message: 'Script task complete' }));
+  gulp.src('src/scripts/main.js')
+  .pipe(sourcemaps.init())
+  .pipe(jshint())
+  .pipe(jshint.reporter('jshint-stylish'))
+  .pipe(jscs('.jscsrc'))
+  .on('error', errorNotify)
+  .pipe(gulp.dest(destinations.js))
+  .pipe(uglify())
+  .on('error', errorNotify)
+  .pipe(rename({suffix: '.min'}))
+  .pipe(sourcemaps.write('/'))
+  .on('error', errorNotify)
+  .pipe(gulp.dest(destinations.js))
+  .pipe(notify({ message: 'Script task complete' }));
 });
 
 /* LIB */
@@ -100,17 +106,6 @@ gulp.task('images', function () {
     .on('error', errorNotify)
     .pipe(gulp.dest(destinations.images))
 		.pipe(notify({ message: 'Images task complete' }));
-});
-
-/* FONTS */
-gulp.task('fonts', function () {
-    return gulp.src('src/fonts/*.*')
-    .pipe(cache('fonts'))
-    .pipe(fontgen({
-      dest: destinations.fonts
-		}))
-		.on('error', errorNotify)
-		.pipe(notify({ message: 'Fonts task complete' }));
 });
 
 /* WATCH */
