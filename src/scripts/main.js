@@ -33,7 +33,7 @@ var player = {
       ready: function () {
         $(this).jPlayer('setMedia', {
           title: 'resonancefm',
-          mp3: 'http://radio.canstream.co.uk:8004/live.mp3',
+          mp3: 'http://54.77.136.103:8000/resonance',
         });
       },
       cssSelectorAncestor: '#jp_container_1',
