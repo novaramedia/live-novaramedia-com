@@ -5,4 +5,4 @@ Currently supports FM only, with a live and offline state. The live state plays 
 
 ### what you can do [if you want]
 
-Check the develop branch for development. Add any bugs or enhancement suggestions as Github issues. Make Pull Requests or get in touch in another way. Please comment any code submitted.
+Add any bugs or enhancement suggestions as Github issues. Make Pull Requests or get in touch in another way. Please comment any code submitted.
