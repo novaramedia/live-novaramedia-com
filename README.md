@@ -1,3 +1,7 @@
+# OBSOLETE
+
+Radio now plays on the main website
+
 =======
 Our live player v2.0 Found at [live.novaramedia.com](http://live.novaramedia.com).
 
